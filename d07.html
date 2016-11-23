@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>优先级</title>
+		<style type="text/css">
+			* {
+				color: yellow;
+			}
+			p {
+				color: red !important;
+			}
+			.cls1 {
+				color: deeppink;
+			}
+			.cls2{
+				color: blueviolet;
+			}
+			#p1{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p id="p1" class="cls2 cls1" style="color:#ccc">p1</p>
+			<span>span1</span>
+		</div>
+	</body>
+</html>

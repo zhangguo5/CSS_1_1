@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>属性选择器</title>
+		<style type="text/css">
+			div[id][class~=cls1] {
+				background: lightgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>组合选择器</h2>
+		<span>span0</span>
+		<div id="div1" class="cls1">
+			div1
+		</div>
+		<div id="div2" class="cls1 cls2">
+			div2
+		</div>
+	</body>
+
+</html>
