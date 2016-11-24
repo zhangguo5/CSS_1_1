@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>rem phone test</title>
+		<!--
+        	描述：视口
+        -->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<style>
+			html {
+				height: 100%;
+				width: 100%;
+				font-family: 'Heiti SC', 'Microsoft YaHei';
+				font-size: 20px;
+				overflow: hidden;
+				outline: 0;
+				-webkit-text-size-adjust: none;
+				-moz-text-size-adjust: none;
+				-ms-text-size-adjust: none;
+			}
+			body {
+				height: 100%;
+				margin: 0;
+				overflow: hidden;
+				-webkit-user-select: none;
+				/*取消用户选择*/
+				
+				width: 100%;
+			}
+			header,
+			footer {
+				width: 100%;
+				line-height: 1.5rem;
+				font-size: 1rem;
+				color: #000;
+				border: 1px solid #ccc;
+				text-align: center;
+				background-color: #ccc;
+			}
+			.bd {
+				margin-top: 1rem;
+				margin-bottom: .5rem;
+				margin-right: -.5rem;
+				font-size: 0;
+			}
+			.bd:after {
+				clear: both;
+			}
+			.box {
+				width: 5rem;
+				height: 5rem;
+				display: inline-block;
+				margin-right: .5rem;
+				margin-bottom: .5rem;
+			}
+			.blue-box {
+				background-color: #06c;
+			}
+			.org-box {
+				background-color: #1fc195;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<header>我是头部</header>
+
+		<div class="bd">
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+			<div class="box blue-box"></div>
+			<div class="box org-box"></div>
+		</div>
+
+		<footer>我是页脚</footer>
+
+		<script>
+		   /*
+		   ;(function(win){
+		      win.alert("Hello IIEF");
+		   })(window);
+		   */
+		
+			 //定义一个方法并执行
+			(function(doc, win) {
+				//获得文档的根节点html
+				var docEl = doc.documentElement;
+				//如果window中存在orientationchange对象，则取orientationchange,否则取resize
+				//为了事件绑定
+				resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
+				//定义一个方法，重新计算font-size大小
+				var recalc = function() {
+					//页面的宽度
+					var clientWidth = docEl.clientWidth;
+					//如果没有宽度则退出
+					if (!clientWidth) return;
+					//重新计算font-size大小，假定320的宽度时字体大小为20;，当页面变化时重新设置字体大小
+					docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+				};
+				//如果浏览器不支持添加事件监听则结束
+				if (!doc.addEventListener) return;
+				//添加事件监听，指定事件处理函数的时期或阶段(boolean)true表示在捕获事件执行，false表示冒泡时执行
+				win.addEventListener(resizeEvt, recalc, false);
+				//当Dom树加载完成时执行计算，DOMContentLoaded事件要在window.onload之前执行
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</body>
+
+</html>

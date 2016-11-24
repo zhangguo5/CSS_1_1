@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>em与rem</title>
+		<style type="text/css">
+			html {
+				font-size: 20px;
+			}
+			
+			body {
+				font-size: 16px;
+			}
+			
+			#div2 {
+				color: white;
+				background: blue;
+				height: 3rem;
+				width: 3rem;
+				font-size: .7rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div2">
+			Hello rem
+		</div>
+		<script type="text/javascript">
+			function resize() {
+				var w = document.documentElement.clientWidth;
+				document.documentElement.style.fontSize = w * 20 / 290 + "px";
+			}
+			window.onresize =resize;
+			
+			resize();
+		</script>
+	</body>
+
+</html>
